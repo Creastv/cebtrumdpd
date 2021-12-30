@@ -1,0 +1,35 @@
+article {
+  .entry-header {
+    width: calc(100vw - 20px);
+    margin-left: calc(-50vw + 50% + 10px);
+    position: relative;
+    text-align: center;
+    background-color: $light;
+    padding: 50px 0px;
+    // padding: 50px 0;
+    @media #{$xs} {
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+    }
+    .entry-title {
+      font-family: "Playfair Display", serif;
+      margin: 0;
+      padding: 0 15px;
+      font-size: 4rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: $black;
+      @media #{$sm} {
+        font-size: 2.4rem;
+      }
+    }
+    #breadcrumbs {
+      padding: 0 15px;
+    }
+  }
+  .entry-content {
+    position: relative;
+    z-index: 3;
+  }
+}

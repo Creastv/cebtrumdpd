@@ -1,0 +1,34 @@
+.toggler-nav {
+  width: 55px;
+  height: 46px;
+  padding: 15px;
+  border: 1px solid $main;
+  align-self: center;
+  display: none;
+  cursor: pointer;
+  transition: all 1s;
+  @media #{$md} {
+    display: block;
+  }
+  @media #{$sm} {
+    width: 55px;
+    height: 39px;
+    padding: 10px;
+  }
+  span {
+    display: block;
+    background-color: $main;
+    border-radius: 1px;
+    width: 100%;
+    height: 3px;
+    margin-bottom: 3px;
+  }
+}
+// js
+
+.toggler-nav-active {
+  background-color: $main;
+  span {
+    background-color: #fff;
+  }
+}

@@ -1,0 +1,25 @@
+.nav-brand {
+  padding: 10px 0;
+  @media #{$xs} {
+    width: 50%;
+  }
+  a {
+    max-width: 300px;
+    display: block;
+    transition: all 0.2s;
+    img {
+      width: 100%;
+      height: auto;
+      transition: all 0.2s;
+    }
+  }
+}
+
+// js
+.off-disturb {
+  .nav-brand {
+    a {
+      max-width: 150px;
+    }
+  }
+}
