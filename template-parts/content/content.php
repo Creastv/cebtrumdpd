@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" class="post-content">
+<article id="post-<?php the_ID(); ?>" class="post-content post-content--hover">
 <div class="wraper">
     <div class="col">
         <div class="entry-data">
@@ -36,10 +36,16 @@
         </div>
     </div>
     <div class="col">
-        <?php the_post_thumbnail(); ?>
-        <?php the_title( '<h2>', '</h2>' ); ?>
-        <?php the_excerpt(); ?>
-        <a class="readmore" href="<?php the_permalink(); ?>">Czytaj więcej</a>
+        <a class="img" href="<?php the_permalink(); ?>">
+            <?php the_post_thumbnail(); ?>
+        </a>
+        <div class="entry">
+            <a href="<?php the_permalink(); ?>">
+              <?php the_title( '<h2>', '</h2>' ); ?>
+            </a>
+            <?php the_excerpt(); ?>
+            <a class="readmore" href="<?php the_permalink(); ?>">Czytaj więcej</a>
+        </div>
     </div>
 </div>
 </article>

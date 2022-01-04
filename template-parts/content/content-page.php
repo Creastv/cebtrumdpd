@@ -4,7 +4,7 @@
          <?php get_template_part( 'template-parts/header/site-title' ); ?>
     </header>
     <?php endif; ?>
-    <div class="entry-content">
+    <div class="entry-content container-fluid">
         <?php the_content(); ?>
         <?php edit_post_link(__('Edit')); ?>
     </div>

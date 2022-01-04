@@ -46,4 +46,8 @@
   text-transform: uppercase;
   letter-spacing: 1;
   font-size: 0.725rem;
+  &:hover {
+    color: darken($main, 10%);
+    transition: all 250ms;
+  }
 }

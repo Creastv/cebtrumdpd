@@ -2,7 +2,7 @@
     <header class="entry-header">
        <?php get_template_part( 'template-parts/header/site-title' ); ?>
     </header>
-    <div class="entry-content enty-content--full enty-content---ext enty-content---img">
+    <div class="entry-content enty-content--full enty-content---ext enty-content---icon">
         <div class="wraper">
             <div class="col">
                 <div class="sticky">

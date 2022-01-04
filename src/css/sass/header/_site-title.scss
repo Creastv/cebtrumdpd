@@ -3,22 +3,9 @@
   text-align: left;
   padding: 3.125rem 0px;
   margin-bottom: 3rem;
-  &:before {
-    content: "";
-    position: absolute;
+  .container-fluid {
+    position: relative;
     z-index: 2;
-    top: 5%;
-    left: 5%;
-    background-image: url(../img/world.svg);
-    opacity: 0.6;
-    width: 35%;
-    height: 90%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    @media #{$sm} {
-      width: 60%;
-    }
   }
   .img {
     width: 100vw;
@@ -58,8 +45,43 @@
     font-weight: 900;
     letter-spacing: 1px;
     color: $black;
+    width: 70%;
     @media #{$sm} {
       font-size: 2.4rem;
+    }
+    @media #{$xs} {
+      width: 100%;
+    }
+  }
+  .team-info {
+    display: flex;
+    align-items: center;
+    .team__pos {
+      color: $main;
+      font-size: 1.25rem;
+    }
+    .team__linkiedin {
+      text-align: center;
+      justify-self: center;
+      align-self: center;
+      margin-right: 1.25rem;
+      padding: 0.625rem;
+      background-color: $main;
+      border: 1px solid $main;
+      border-radius: 100%;
+      width: 40px;
+      height: 40px;
+      transition: all 0.3;
+      path {
+        fill: #fff;
+        transition: all 0.3;
+      }
+      &:hover {
+        background-color: #fff;
+        path {
+          fill: $main;
+        }
+      }
     }
   }
 
@@ -75,21 +97,56 @@
     position: absolute;
     z-index: 1;
     top: 0;
-    width: calc(100vw + 35px);
+    width: calc(100vw - 60px);
     height: 100%;
     margin-left: -50vw;
-    left: calc(50% + 0px);
+    left: calc(50% + 50px);
+    @media #{$xs} {
+      width: 100%;
+      margin-left: 0;
+      left: 0;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      top: 5%;
+      left: 15%;
+      background-image: url(../img/world.svg);
+      opacity: 0.6;
+      width: 35%;
+      height: 90%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      @media #{$sm} {
+        width: 60%;
+      }
+    }
     .wraper {
       height: 100%;
       display: flex;
       .col:nth-child(1) {
-        // width: calc(29% - 50px);
         width: 30%;
       }
       .col:nth-child(2) {
         background-color: $main-sec;
+        text-align: right;
         width: 70%;
         padding-left: 50px;
+        img {
+          position: absolute;
+          right: 0px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 30%;
+          @media #{$xs} {
+            width: 40%;
+            bottom: -5%;
+            top: initial;
+            transform: translateY(0);
+          }
+        }
       }
     }
   }

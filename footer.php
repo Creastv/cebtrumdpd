@@ -1,4 +1,4 @@
-    </div>
+
     <?php if(get_theme_mod('d-map') ) { ?>
     <section>
         <div id="map"></div>
@@ -27,6 +27,7 @@
           <?php get_template_part('template-parts/footer/site-footer-info'); ?>
       </div>
   </footer>
+  <?php get_template_part('template-parts/extras/contact-info'); ?>
   <svg id="go-to-top" class="js" xmlns="http://www.w3.org/2000/svg" width="25.243" height="24" viewBox="0 0 25.243 24">
       <g id="Icon_feather-arrow-up" data-name="Icon feather-arrow-up" transform="translate(-5.379 -6)">
           <path id="Path_522" data-name="Path 522" d="M18,28.5V7.5" fill="none" stroke="#fff" stroke-linecap="round"
