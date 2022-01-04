@@ -9,6 +9,7 @@
 @import "./sass/header/site-branding";
 @import "./sass/header/site-nav";
 @import "./sass/header/site-navbar";
+@import "./sass/header/site-title";
 @import "./sass/header/site-toggler-nav";
 
 // footer
@@ -17,8 +18,12 @@
 @import "./sass/footer/site-footer-nav";
 @import "./sass/footer/site-footer-info";
 
+//extras
+@import "./sass/extras/contact-info";
+
 // Post/Page
 @import "./sass/content";
 @import "./sass/err";
 @import "./sass/buttons";
 @import "./sass/forms";
+@import "./sass/blog";

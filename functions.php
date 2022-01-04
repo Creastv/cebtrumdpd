@@ -1,23 +1,50 @@
 <?php
 add_theme_support('post-thumbnails');
-if ( ! function_exists( 'inb_register_nav_menu' ) ) {
-    function inb_register_nav_menu(){
+if ( ! function_exists( 'crea_register_nav_menu' ) ) {
+    function crea_register_nav_menu(){
         register_nav_menus( array(
-            'primary_menu' => __( 'Primary Menu', 'text_domain' ),
-            'footer_menu'  => __( 'Footer Menu', 'text_domain' ),
+            'primary_menu' => __( 'Primary Menu', 'crea' ),
+            'footer_menu'  => __( 'Footer Menu', 'crea' ),
         ) );
     }
-    add_action( 'after_setup_theme', 'inb_register_nav_menu', 0 );
+    add_action( 'after_setup_theme', 'crea_register_nav_menu', 0 );
 }
-function inb_scripts() {
-	wp_enqueue_style( 'cr-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'cr_custome-style', get_template_directory_uri().'/src/css/main.min.css' );
-	// wp_enqueue_script('cr-main', get_template_directory_uri().'/src/js/main.js', array( ),'3', true );
+function crea_widgets_init() {
+	register_sidebar( array(
+		'name'          => __( 'Sidebar', 'cr' ),
+		'id'            => 'sidebar-1',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer', 'cr' ),
+		'id'            => 'footer',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer 2', 'cr' ),
+		'id'            => 'footer-2',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+}
+add_action( 'widgets_init', 'crea_widgets_init' );
+
+function crea_scripts() {
+  wp_enqueue_style( 'cr-style', get_stylesheet_uri() );
+  wp_enqueue_style( 'cr_custome-style', get_template_directory_uri().'/src/css/main.min.css' );
+
   wp_register_script( 'main-js-defer',  get_template_directory_uri().'/src/js/main.js', [], false, true ); 
   wp_enqueue_script( 'main-js-defer' );
-
 }
-add_action( 'wp_enqueue_scripts', 'inb_scripts' );
+add_action( 'wp_enqueue_scripts', 'crea_scripts' );
 
 
 require get_template_directory() . '/src/inc/customizer.php';
@@ -29,7 +56,7 @@ require get_template_directory() . '/src/inc/cleanup.php';
 /**
  * This function adds the "async" and "defer" parameters to Javascript resources.
  */
-function inb_add_async_defer_attr( $tag, $handle ) {
+function crea_add_async_defer_attr( $tag, $handle ) {
 	if( strpos( $handle, "async" ) ):
 		$tag = str_replace(' src', ' async="async" src', $tag);
 	endif;
@@ -40,38 +67,17 @@ function inb_add_async_defer_attr( $tag, $handle ) {
 
 	return $tag;
 }
-add_filter('script_loader_tag', 'inb_add_async_defer_attr', 10, 2);
-
-
-// Speed up 
-// add_action('plugins_loaded','inb_defer_inline_init');
-
-// function inb_defer_inline_init() {
-// 	if ( get_option('autoptimize_js_include_inline') != 'on' ) {
-// 		add_filter('autoptimize_html_after_minify','inb_defer_inline_jquery',10,1);
-// 	}
-// }
-
-// function inb_defer_inline_jquery( $in ) {
-//   if ( preg_match_all( '#<script.*>(.*)</script>#Usmi', $in, $matches, PREG_SET_ORDER ) ) {
-//     foreach( $matches as $match ) {
-//       if ( $match[1] !== '' && ( strpos( $match[1], 'jQuery' ) !== false || strpos( $match[1], '$' ) !== false ) ) {
-//         // inline js that requires jquery, wrap deferring JS around it to defer it. 
-//         $new_match = 'var aoDeferInlineJQuery=function(){'.$match[1].'}; if (document.readyState === "loading") {document.addEventListener("DOMContentLoaded", aoDeferInlineJQuery);} else {aoDeferInlineJQuery();}';
-//         $in = str_replace( $match[1], $new_match, $in );
-//       } else if ( $match[1] === '' && strpos( $match[0], 'src=' ) !== false && strpos( $match[0], 'defer' ) === false ) {
-//         // linked non-aggregated JS, defer it.
-//         $new_match = str_replace( '<script ', '<script defer ', $match[0] );
-//         $in = str_replace( $match[0], $new_match, $in );
-//       }
-//     }
-//   }
-//   return $in;
-// }
-
+add_filter('script_loader_tag', 'crea_add_async_defer_attr', 10, 2);
 
 add_action('wp_default_scripts', function ($scripts) {
     if (!empty($scripts->registered['jquery'])) {
         $scripts->registered['jquery']->deps = array_diff($scripts->registered['jquery']->deps, ['jquery-migrate']);
     }
 });
+
+function is_post_type($type){
+    global $wp_query;
+    if($type == get_post_type($wp_query->post->ID)) 
+        return true;
+    return false;
+}

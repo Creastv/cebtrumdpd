@@ -1,12 +1,86 @@
 .brand {
   margin-bottom: 30px;
+  @media #{$xs} {
+    text-align: center;
+  }
   img {
     max-width: 100%;
     height: auto;
   }
 }
-.brand-desc {
-  * {
-    color: #fff;
+.brand-inf {
+  margin-bottom: 2.5rem;
+  display: block;
+  .inf {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.625rem;
+    @media #{$xs} {
+      justify-content: center;
+    }
+    a {
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+      &:hover {
+        span {
+          color: $main;
+        }
+      }
+    }
+    svg {
+      margin-right: 0.625rem;
+      align-self: center;
+    }
+    span {
+      align-self: center;
+      font-size: 1rem;
+      font-weight: 400;
+      color: $light-black;
+      transition: 0.3s all;
+    }
+  }
+}
+
+.social-media-horizontal {
+  margin-bottom: 1.25rem;
+  display: block;
+  @media #{$xs} {
+    text-align: center;
+  }
+  h4 {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0.625rem;
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    @media #{$xs} {
+      justify-content: center;
+    }
+    li {
+      a {
+        display: flex;
+        width: 1.875rem;
+        height: 1.875rem;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        margin: 0.125rem;
+        transition: 0.3s all;
+        &:hover {
+          background-color: $main;
+          svg {
+            path {
+              transition: 0.3s all;
+              fill: #fff;
+            }
+          }
+        }
+      }
+    }
   }
 }

@@ -20,5 +20,6 @@
             <?php get_template_part('template-parts/header/site-navbar'); ?>
         </div>
     </header>
+   <?php get_template_part('template-parts/extras/contact-info'); ?>
     <main>
         <div class="container-fluid">

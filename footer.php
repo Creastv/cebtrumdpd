@@ -12,8 +12,15 @@
                   <?php get_template_part('template-parts/footer/site-footer-branding'); ?>
               </div>
               <div class="col">
-                  <?php get_template_part('template-parts/footer/site-footer-nav'); ?>
+                  <?php do_action( 'before_sidebar' ); ?>
+                  <?php if ( ! dynamic_sidebar( 'footer-2' ) ) : ?><?php endif; ?>
               </div>
+              <div class="col">
+                  <?php do_action( 'before_sidebar' ); ?>
+                  <?php if ( ! dynamic_sidebar( 'footer' ) ) : ?><?php endif; ?>
+                  <img class="world-footer" src="<?php echo get_template_directory_uri(); ?>/src/img/world.svg" alt="">
+                  <img class="arrowflow-footer" src="<?php echo get_template_directory_uri(); ?>/src/img/arrowflow.svg" alt="">
+             </div>
           </div>
       </div>
       <div class="container-fluid">

@@ -4,15 +4,17 @@
   justify-content: center;
   align-items: center;
   padding: 35px 0;
-  border-top: 1px solid $main-tir;
+  border-top: 1px solid #cccdce;
+  opacity: 0.6;
   @media #{$sm} {
     justify-content: center;
   }
   .col {
     p {
-      font-size: 14px;
+      font-size: 0.75rem;
       margin: 0;
       color: $main-tir;
+      // opacity: 0.6;
       @media #{$sm} {
         margin-bottom: 15px;
       }
