@@ -54,37 +54,37 @@
     }
     .current-menu-item {
       a {
-        // background-color: $main;
-        // color: #fff;
-        position: relative;
-        &:after {
-          content: "";
-          position: absolute;
-          bottom: 15px;
-          left: 0;
-          background-image: url(../img/arrow-left-ornament.svg);
-          width: 100%;
-          height: 15px;
-          background-size: contain;
-          background-position: left center;
-          background-repeat: no-repeat;
-        }
-        &:hover {
-          // background-color: $main;
-          // color: #fff;
+        span {
+          display: block;
+          position: relative;
+          &:after {
+            content: "";
+            position: absolute;
+            bottom: -0.625rem;
+            left: 0;
+            background-image: url(../img/arrow-left-ornament.svg);
+            width: 100%;
+            height: 15px;
+            background-size: 125px;
+            background-position: left center;
+            background-repeat: no-repeat;
+          }
         }
       }
     }
   }
 }
 
-.icon-home {
+.ico-home {
   span {
-    background: url(../img/ico-home.svg);
-    width: 25px;
-    height: 20px;
+    background: url(../img/home.png);
+    width: 40px;
+    height: 40px;
     font-size: 0px;
     opacity: 0.8;
+    &:after {
+      display: none !important;
+    }
   }
 }
 .current_page_item.icon-home {

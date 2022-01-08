@@ -1,20 +1,20 @@
 // Index
 .page-content-index {
   display: flex;
-  @media #{$sm} {
+  @media #{$md} {
     flex-wrap: wrap;
   }
   .page-main-content {
     width: 80%;
     padding-right: 50px;
-    @media #{$sm} {
+    @media #{$md} {
       width: 100%;
       padding-right: 0px;
     }
   }
   .page-sidebar {
     width: 20%;
-    @media #{$sm} {
+    @media #{$md} {
       width: 100%;
     }
   }
@@ -27,18 +27,18 @@
 // Post Cart
 .post-content--hover {
   &:hover {
-    .col:nth-child(1) {
-      .entry-data {
-        background-color: darken($main-sec, 10%);
-        transform: translateY(0);
-      }
-      .entry-info {
-        transform: translateY(-0.438rem);
-      }
+    .entry-data {
+      background-color: darken($main-sec, 10%);
+      transform: translateY(0);
     }
+    .entry-info {
+      transform: translateY(-0.438rem);
+    }
+
     .col:nth-child(2) {
       box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.047);
       .img {
+        position: relative;
         img {
           transform: scale(1.05);
         }
@@ -59,10 +59,48 @@
   transition: all 250ms;
   .wraper {
     display: flex;
+    position: relative;
     @media #{$sm} {
       flex-wrap: wrap;
     }
+    .flex-col {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 28%;
+      min-width: 11.25rem;
+      text-align: right;
+      padding: 0 2.5rem 0 0;
+      @media #{$sm} {
+        padding: 0;
+        position: relative;
+        width: 100%;
+        display: flex;
+      }
 
+      .entry-data {
+        @media #{$sm} {
+          position: absolute;
+          bottom: 0;
+        }
+      }
+      .entry-info {
+        @media #{$sm} {
+          max-width: 100%;
+          align-items: center;
+          justify-content: flex-start;
+          margin-left: 0.625rem;
+        }
+        .author,
+        .cat,
+        .coments-num {
+          @media #{$sm} {
+            width: initial;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
     .col:nth-child(1) {
       width: 28%;
       min-width: 11.25rem;
@@ -96,6 +134,7 @@
       .img {
         display: block;
         overflow: hidden;
+        position: relative;
       }
       .readmore {
         display: flex;
@@ -107,15 +146,37 @@
   }
 }
 
+.entry-data.mobile {
+  position: absolute;
+  bottom: 0 !important;
+  display: none;
+  @media #{$sm} {
+    display: block;
+  }
+}
+.entry-data.desktop {
+  display: block;
+  @media #{$sm} {
+    display: none;
+  }
+}
+
 .entry-data {
   background-color: $main-sec;
   padding: 1.25rem 1.25rem 0 1.25rem;
   text-align: center;
   transition: all 350ms;
   transform: translateY(0.438rem);
+  @media #{$sm} {
+    padding: 0.063rem 0.063rem 0 0.063rem;
+  }
   .wraper-data {
     background-color: #fff;
     padding: 1.25rem 1.25rem 0 1.25rem;
+    @media #{$sm} {
+      background-color: $main-sec;
+      padding: 0.63rem 0.63rem 0 0.63rem;
+    }
     &:after {
       content: "";
       display: block;
@@ -128,9 +189,12 @@
     span {
       display: block;
       color: $black;
-      font-size: 60px;
+      font-size: 2.75rem;
       font-weight: 900;
       margin: 0.725rem 0;
+      @media #{$sm} {
+        font-size: 1.75rem;
+      }
     }
     small {
       display: block;
@@ -143,7 +207,7 @@
 
 .entry-info {
   max-width: 190px;
-  padding-right: 2.5rem;
+  padding-right: 1.25rem;
   font-size: 0.7rem;
   text-align: right;
   display: flex;
@@ -158,9 +222,12 @@
   a {
     color: $light-black;
   }
-  a .cat,
+  .cat {
+    width: 100%;
+    text-align: right;
+  }
+
   .author,
-  .cat,
   .coments-num {
     width: 100%;
     display: block;

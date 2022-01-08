@@ -20,9 +20,14 @@ article {
           }
           img {
             max-width: 100%;
+            // width: 100%;
             margin: 0 auto;
             height: auto;
             display: block;
+            transform: translateX(60px);
+            @media #{$xlg} {
+              transform: translateX(0px);
+            }
           }
         }
       }
@@ -35,7 +40,7 @@ article {
           position: relative;
           margin: 10% auto;
           margin-top: 0;
-          padding-top: 10%;
+          padding-top: 0%;
           text-align: right;
           max-width: 70%;
           @media #{$xs} {
@@ -80,7 +85,7 @@ article {
       .sticky {
         position: -webkit-sticky;
         position: sticky;
-        top: 100px;
+        top: 35px;
         &:before {
           content: "";
           position: absolute;
@@ -101,7 +106,7 @@ article {
     width: calc(100vw - 60px);
     height: 100%;
     margin-left: -50vw;
-    left: calc(50% + 50px);
+    left: calc(50% + 35px);
     margin-top: -50px;
     @media #{$xs} {
       width: 100%;
@@ -130,6 +135,63 @@ article {
           width: 100%;
           padding: 1.25rem 0.938rem;
         }
+      }
+    }
+  }
+}
+
+.team-contact {
+  padding: 0.625rem;
+  background-color: $main-sec;
+  display: inline-block;
+  @media #{$sm} {
+    display: block;
+  }
+  a {
+    @media #{$sm} {
+      display: block;
+      margin-bottom: 0.625rem;
+    }
+    &:hover {
+      color: $black;
+      path {
+        fill: $black;
+      }
+    }
+  }
+  p {
+    display: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0.625rem;
+    @media #{$sm} {
+      display: block;
+    }
+  }
+  a,
+  a svg {
+    margin-right: 0.625rem;
+  }
+  a:last-child {
+    margin-right: 0;
+  }
+}
+
+.back {
+  padding: 0.625rem;
+  a {
+    display: flex;
+    align-items: center;
+    &:hover {
+      color: $black;
+      path {
+        fill: $black;
+      }
+    }
+    svg {
+      margin-right: 0.625rem;
+      path {
+        fill: $main;
       }
     }
   }

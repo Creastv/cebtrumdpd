@@ -84,6 +84,19 @@
       }
     }
   }
+  .team-info-contact {
+    a {
+      margin-right: 1.25rem;
+      @media #{$xs} {
+        display: block;
+        margin-bottom: 0.625rem;
+      }
+    }
+
+    svg {
+      margin-right: 1.25rem;
+    }
+  }
 
   #breadcrumbs {
     padding: 0 0.938rem 0 0;
