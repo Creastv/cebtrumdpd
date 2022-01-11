@@ -10,13 +10,14 @@ article {
           position: relative;
           margin: 10% auto;
           margin-top: 0;
+
           padding-top: 10%;
           text-align: right;
           max-width: 70%;
           @media #{$xs} {
             max-width: 100%;
             margin: 0;
-            // padding-top: 0;
+            padding-top: 0;
           }
           img {
             max-width: 100%;
@@ -25,8 +26,15 @@ article {
             height: auto;
             display: block;
             transform: translateX(60px);
+            padding-bottom: 1.25rem;
             @media #{$xlg} {
               transform: translateX(0px);
+            }
+            @media #{$xs} {
+              max-width: 5.625rem;
+              margin: 0;
+              margin-left: 11%;
+              padding-top: 0.625rem;
             }
           }
         }
@@ -85,7 +93,10 @@ article {
       .sticky {
         position: -webkit-sticky;
         position: sticky;
-        top: 35px;
+        top: 2.188rem;
+        @media #{$md} {
+          top: 3.125rem;
+        }
         &:before {
           content: "";
           position: absolute;
@@ -93,9 +104,15 @@ article {
           left: 0;
           width: 100%;
           height: 200px;
+          max-height: 50%;
           background-color: $main-sec;
+          @media #{$sm} {
+            width: calc(100% + 35px);
+            height: 50%;
+          }
           @media #{$xs} {
-            width: 50%;
+            width: 35%;
+            height: 50%;
           }
         }
       }
@@ -108,10 +125,10 @@ article {
     margin-left: -50vw;
     left: calc(50% + 35px);
     margin-top: -50px;
-    @media #{$xs} {
-      width: 100%;
-      margin-left: 0;
-      left: 0;
+    @media #{$sm} {
+      width: 100vw;
+      margin-left: -50vw;
+      left: 50%;
     }
     .wraper {
       display: flex;
@@ -133,7 +150,7 @@ article {
         padding-right: calc((100% - 1300px) / 2);
         @media #{$xs} {
           width: 100%;
-          padding: 1.25rem 0.938rem;
+          padding: 0 21px;
         }
       }
     }
@@ -178,7 +195,7 @@ article {
 }
 
 .back {
-  padding: 0.625rem;
+  padding: 0.625rem 1.25rem;
   a {
     display: flex;
     align-items: center;

@@ -26,6 +26,7 @@
                 </div>
             </div>
         </div>
+        <br>
         <?php get_template_part( 'template-parts/extras/offerts' ); ?>
     </div>
 </article>

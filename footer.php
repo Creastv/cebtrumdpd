@@ -1,9 +1,4 @@
 
-    <?php if(get_theme_mod('d-map') ) { ?>
-    <section>
-        <div id="map"></div>
-    </section>
-    <?php } ?>
   </main>
   <footer id="footer">
       <div class="container-fluid">

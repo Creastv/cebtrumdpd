@@ -38,20 +38,33 @@ function crea_widgets_init() {
 add_action( 'widgets_init', 'crea_widgets_init' );
 
 function crea_scripts() {
-  wp_enqueue_style( 'cr-style', get_stylesheet_uri() );
-  wp_enqueue_style( 'cr_custome-style', get_template_directory_uri().'/src/css/main.min.css' );
+	wp_enqueue_style( 'cr-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'cr_custome-style', get_template_directory_uri().'/src/css/main.min.css' );
 
-  wp_register_script( 'main-js-defer',  get_template_directory_uri().'/src/js/main.js', [], false, true ); 
-  wp_enqueue_script( 'main-js-defer' );
+    if( is_singular( 'oferta' ) || is_singular( 'zespol' ) ){
+    wp_enqueue_style( 'inb-team-slider-css', get_template_directory_uri().'/src/css/swiper.min.css' );
+
+    wp_register_script( 'swiper.min-js-defer', get_template_directory_uri().'/src/js/swiper.min.js', [], false, true ); 
+    wp_enqueue_script( 'swiper.min-js-defer' );
+
+	wp_register_script( 'inb-offert-js-defer', get_template_directory_uri().'/src/js/offert-slider.js', [], false, true ); 
+    wp_enqueue_script( 'inb-offert-js-defer' );
+	}
+	
+	wp_register_script( 'main-js-defer',  get_template_directory_uri().'/src/js/main.js', [], false, true ); 
+	wp_enqueue_script( 'main-js-defer' );
+
+
 }
 add_action( 'wp_enqueue_scripts', 'crea_scripts' );
 
 
 require get_template_directory() . '/src/inc/customizer.php';
-if(get_theme_mod('d-map') ) {
-require get_template_directory() . '/src/inc/map.php';
-require get_template_directory() . '/src/inc/cleanup.php';
-}
+// require get_template_directory() . '/src/inc/cleanup.php';
+
+
+
+
 
 /**
  * This function adds the "async" and "defer" parameters to Javascript resources.

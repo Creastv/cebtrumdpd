@@ -74,25 +74,25 @@ function crea_customize_register( $wp_customize ) {
     $wp_customize->add_control( 'email_hd_en', array(
         'label' => __( 'E-mail', 'crea' ),
         'type' => 'text',
-        'section' => 'header_pl',
+        'section' => 'header_en',
     ) );
     $wp_customize->add_setting( 'email_url_hd_en' );
     $wp_customize->add_control( 'email_url_hd_en', array(
         'label' => __( 'E-mail url', 'crea' ),
         'type' => 'text',
-        'section' => 'header_pl',
+        'section' => 'header_en',
     ) );
     $wp_customize->add_setting( 'phone_hd_en' );
     $wp_customize->add_control( 'phone_hd_en', array(
         'label' => __( 'Phone', 'crea' ),
         'type' => 'text',
-        'section' => 'header_pl',
+        'section' => 'header_en',
     ) );
     $wp_customize->add_setting( 'phone_url_hd_en' );
     $wp_customize->add_control( 'phone_url_hd_en', array(
         'label' => __( 'Phone url', 'crea' ),
         'type' => 'text',
-        'section' => 'header_pl',
+        'section' => 'header_en',
     ) );
     // End Header
 
@@ -449,8 +449,89 @@ function crea_customize_register( $wp_customize ) {
         'type' => 'text',
         'section' => 'map',
     ) );
-
     // End Map
+
+     // Oferta
+    $wp_customize->add_panel( 'offert' , array(
+	'title' => __( 'Offert', 'crea' ),
+	'priority' => 115,
+	) );
+
+    $wp_customize->add_section( 'offert_pl' , array(
+	'title' => __( 'Offert PL', 'crea' ),
+	'priority' => 105,
+    'panel' => 'offert',
+	) );
+
+    $wp_customize->add_section( 'offert_en' , array(
+	'title' => __( 'Offert EN', 'crea' ),
+	'priority' => 105,
+    'panel' => 'offert',
+	) );
+    // Oferta PL
+    // Display Oferta
+    $wp_customize->add_setting( 'd-offert-sec_pl', array(
+        'default' => 12,
+    ) );
+    $wp_customize->add_control( 'd-offert-sec_pl', array(
+        'label' => __( 'Display Offert section' , 'crea' ),
+        'type' => 'checkbox',
+        'section' => 'offert_pl',
+    ) );
+
+     // Title
+	$wp_customize->add_setting( 'title_pl', array(
+        'default' => 'Poznaj naszą ofertę',
+    ) );
+    $wp_customize->add_control( 'title_pl', array(
+        'label' => __( 'Title', 'crea' ),
+        'type' => 'text',
+        'section' => 'offert_pl',
+    ) );
+    // Desc
+    $wp_customize->add_setting( 'desc_pl', array(
+        'default' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem enim cupiditate aspernatur, sapiente velit nemo optio illum commodi rem officiis magnam rerum accusantium? Cum aut dolore similique eum optio numquam!',
+    ));
+
+    $wp_customize->add_control( 'desc_pl', array(
+        'label' => __( 'Description' , 'crea' ),
+        'type' => 'textarea',
+        'section' => 'offert_pl',
+    ) );
+    // END Oferta PL
+
+    // Oferta EN
+    // Display Oferta
+    $wp_customize->add_setting( 'd-offert-sec_en', array(
+        'default' => 12,
+    ) );
+    $wp_customize->add_control( 'd-offert-sec_en', array(
+        'label' => __( 'Display Offert section' , 'crea' ),
+        'type' => 'checkbox',
+        'section' => 'offert_en',
+    ) );
+
+     // Title
+	$wp_customize->add_setting( 'title_en', array(
+        'default' => 'Poznaj naszą ofertę',
+    ) );
+    $wp_customize->add_control( 'title_en', array(
+        'label' => __( 'Title', 'crea' ),
+        'type' => 'text',
+        'section' => 'offert_en',
+    ) );
+    // Desc
+    $wp_customize->add_setting( 'desc_en', array(
+        'default' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem enim cupiditate aspernatur, sapiente velit nemo optio illum commodi rem officiis magnam rerum accusantium? Cum aut dolore similique eum optio numquam!',
+    ));
+
+    $wp_customize->add_control( 'desc_en', array(
+        'label' => __( 'Description' , 'crea' ),
+        'type' => 'textarea',
+        'section' => 'offert_en',
+    ) );
+    // END Oferta PL
+
 
 }
 
