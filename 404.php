@@ -4,7 +4,8 @@
         <div class="col text-center">
             <h1>404</h1>
             <a class="btn btn-main" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                <?php _e( 'Wróć do strony głównej', 'crea' ); ?></a>
+                <?php echo __( 'Wróć do strony głównej', 'crea' ); ?>
+            </a> 
         </div>
     </div>
 </div>

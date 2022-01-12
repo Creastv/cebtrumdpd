@@ -79,9 +79,9 @@ body {
 
 .container-fluid {
   width: calc(100% - 100px);
-  max-width: 1400px;
+  max-width: calc(1400px - 35px);
   margin: 0 auto;
-  padding-left: 35px;
+  padding-left: 31px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -347,9 +347,7 @@ body {
 
 .entry-header {
   position: relative;
-  text-align: left;
   padding: 3.125rem 0px;
-  margin-bottom: 3rem;
 }
 
 .entry-header .container-fluid {
@@ -928,6 +926,7 @@ body {
   border-right: 1px solid #e0e1e2;
   height: 100vh;
   max-width: 100px;
+  width: 45px;
   padding-top: 100px;
 }
 
@@ -1289,6 +1288,49 @@ article .entry-content {
   z-index: 3;
 }
 
+article .enty-content---icon .col:nth-child(1) .sticky aside {
+  position: relative;
+  margin: 1% auto;
+  margin-top: 0;
+  padding-top: 5%;
+  text-align: right;
+  max-width: 70%;
+}
+
+@media only screen and (max-width: 460px) {
+  article .enty-content---icon .col:nth-child(1) .sticky aside {
+    text-align: left;
+    max-width: 100%;
+    margin: 0;
+    padding-top: 0;
+  }
+}
+
+article .enty-content---icon .col:nth-child(1) .sticky aside .back a {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+@media only screen and (max-width: 460px) {
+  article .enty-content---icon .col:nth-child(1) .sticky aside .back a {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+article .enty-content---icon .col:nth-child(1) .sticky aside img {
+  position: relative;
+  right: 0;
+  display: inline-block;
+}
+
+article .enty-content---icon .col:nth-child(1) .sticky aside .btn {
+  display: inline-block;
+  margin: 5%;
+}
+
 article .enty-content---icon .col:nth-child(1) .sticky .img {
   position: relative;
   margin: 10% auto;
@@ -1425,7 +1467,6 @@ article .enty-content--full {
   height: 100%;
   margin-left: -50vw;
   left: calc(50% + 35px);
-  margin-top: -50px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1767,6 +1808,7 @@ label {
 }
 
 .page-content-index {
+  padding-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

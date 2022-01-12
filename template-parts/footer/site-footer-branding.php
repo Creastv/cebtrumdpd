@@ -34,10 +34,6 @@
      <?php } ?>
  </div>
  <div class="brand-inf">
-     <?php if ($descFooter) { ?>
-     <p><?php echo $descFooter; ?></p>
-     <?php } ?>
-
      <?php if ($address) { ?>
      <div class="inf">
          <?php if ($address_url) { ?>

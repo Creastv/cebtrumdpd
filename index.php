@@ -11,7 +11,7 @@
                         <?php get_template_part( 'template-parts/content/content' );?>
                     <?php endwhile; ?>
                 <?php else : ?>
-                    <h1 class="text-center">Nic nie znaleziono</h1>
+                    <h2><?php echo __( 'Nic nie znaleziono', 'crea' ); ?></h2>
                 <?php endif; ?>
             </div>
             <?php if(paginate_links()) { ?>

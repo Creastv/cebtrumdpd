@@ -1,4 +1,6 @@
-
+<?php
+ if (get_locale() == 'pl_PL') { $footer =  'footer-2'; $footer2 =  'footer_pl'; } else {  $footer   =  'footer-22'; $footer2 =  'footer_en';}
+?>
   </main>
   <footer id="footer">
       <div class="container-fluid">
@@ -8,11 +10,11 @@
               </div>
               <div class="col">
                   <?php do_action( 'before_sidebar' ); ?>
-                  <?php if ( ! dynamic_sidebar( 'footer-2' ) ) : ?><?php endif; ?>
+                  <?php if ( ! dynamic_sidebar( $footer  ) ) : ?><?php endif; ?>
               </div>
               <div class="col">
                   <?php do_action( 'before_sidebar' ); ?>
-                  <?php if ( ! dynamic_sidebar( 'footer' ) ) : ?><?php endif; ?>
+                  <?php if ( ! dynamic_sidebar( $footer2 ) ) : ?><?php endif; ?>
                   <img class="world-footer" src="<?php echo get_template_directory_uri(); ?>/src/img/world.svg" alt="">
                   <img class="arrowflow-footer" src="<?php echo get_template_directory_uri(); ?>/src/img/arrowflow.svg" alt="">
              </div>

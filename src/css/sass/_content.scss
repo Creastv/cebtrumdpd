@@ -6,6 +6,37 @@ article {
   .enty-content---icon {
     .col:nth-child(1) {
       .sticky {
+        aside {
+          position: relative;
+          margin: 1% auto;
+          margin-top: 0;
+          padding-top: 5%;
+          text-align: right;
+          max-width: 70%;
+          @media #{$xs} {
+            text-align: left;
+            max-width: 100%;
+            margin: 0;
+            padding-top: 0;
+          }
+          .back {
+            a {
+              justify-content: flex-end;
+              @media #{$xs} {
+                justify-content: flex-start;
+              }
+            }
+          }
+          img {
+            position: relative;
+            right: 0;
+            display: inline-block;
+          }
+          .btn {
+            display: inline-block;
+            margin: 5%;
+          }
+        }
         .img {
           position: relative;
           margin: 10% auto;
@@ -124,7 +155,7 @@ article {
     height: 100%;
     margin-left: -50vw;
     left: calc(50% + 35px);
-    margin-top: -50px;
+    // margin-top: -50px;
     @media #{$sm} {
       width: 100vw;
       margin-left: -50vw;

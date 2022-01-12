@@ -1,0 +1,24 @@
+# Copyright (C) 2020 Piotr Stefaniak
+msgid ""
+msgstr ""
+
+
+#: index.php:15
+msgid "Nic nie znaleziono"
+msgstr ""
+
+#: 404.php:7
+msgid "Wróć do strony głównej"
+msgstr ""
+
+#: content-team.php:21
+msgid "Powrót"
+msgstr ""
+
+#: content.php:54
+msgid "Czytaj więcej"
+msgstr ""
+
+#: content.php:54
+msgid "Pobierz PDF"
+msgstr ""

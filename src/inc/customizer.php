@@ -121,14 +121,6 @@ function crea_customize_register( $wp_customize ) {
 		'section' => 'footer_pl',
 		'settings' => 'logo-footer',
 	) ) );
-
-    $wp_customize->add_setting( 'desc' );
-    $wp_customize->add_control( 'desc', array(
-        'label' => __( 'Description', 'crea' ),
-        'type' => 'textarea',
-        'section' => 'footer_pl',
-    ) );
-
     $wp_customize->add_setting( 'address' );
     $wp_customize->add_control( 'address', array(
         'label' => __( 'Address', 'crea' ),
@@ -189,13 +181,6 @@ function crea_customize_register( $wp_customize ) {
 		'section' => 'footer_en',
 		'settings' => 'logo-footer_en',
 	) ) );
-
-    $wp_customize->add_setting( 'desc_en' );
-    $wp_customize->add_control( 'desc_en', array(
-        'label' => __( 'Description', 'crea' ),
-        'type' => 'textarea',
-        'section' => 'footer_en',
-    ) );
 
     $wp_customize->add_setting( 'address_en' );
     $wp_customize->add_control( 'address_en', array(
@@ -375,81 +360,6 @@ function crea_customize_register( $wp_customize ) {
     ) );
     // END Social media EN
 
-
-    // Map
-    $wp_customize->add_section( 'map' , array(
-	'title' => __( 'Google map', 'crea' ),
-	'priority' => 115,
-	) );
-
-    // Display map
-    $wp_customize->add_setting( 'd-map', array(
-        'default' => 12,
-    ) );
-    $wp_customize->add_control( 'd-map', array(
-        'label' => __( 'Display map' , 'crea' ),
-        'type' => 'checkbox',
-        'section' => 'map',
-    ) );
-
-    // Lat
-	$wp_customize->add_setting( 'latitude', array(
-        'default' => 54.3823818,
-    ) );
-    $wp_customize->add_control( 'latitude', array(
-        'label' => __( 'Latitude', 'crea' ),
-        'type' => 'number',
-        'section' => 'map',
-    ) );
-    // Lon
-    $wp_customize->add_setting( 'longitude', array(
-        'default' => 18.6739476,
-    ));
-    $wp_customize->add_control( 'longitude', array(
-        'label' => __( 'Longitude' , 'crea' ),
-        'type' => 'number',
-        'section' => 'map',
-    ) );
-    // Zoom
-    $wp_customize->add_setting( 'zoom', array(
-        'default' => 12,
-    ) );
-    $wp_customize->add_control( 'zoom', array(
-        'label' => __( 'Zoom' , 'crea' ),
-        'type' => 'number',
-        'section' => 'map',
-    ) );
-
-    // Info address
-	$wp_customize->add_setting( 'inf-address', array(
-        'default' => 'Your Address',
-    ) );
-    $wp_customize->add_control( 'inf-address', array(
-        'label' => __( 'inf-address', 'crea' ),
-        'type' => 'textarea',
-        'section' => 'map',
-    ) );
-
-     // Info address
-	$wp_customize->add_setting( 'inf-address-en', array(
-        'default' => 'Your Address',
-    ) );
-    $wp_customize->add_control( 'inf-address-en', array(
-        'label' => __( 'inf-address EN', 'crea' ),
-        'type' => 'textarea',
-        'section' => 'map',
-    ) );
-
-    // Link map
-	$wp_customize->add_setting( 'link-map', array(
-        'default' => 'https://google.map.com/',
-    ) );
-    $wp_customize->add_control( 'link-map', array(
-        'label' => __( 'Link to map', 'crea' ),
-        'type' => 'text',
-        'section' => 'map',
-    ) );
-    // End Map
 
      // Oferta
     $wp_customize->add_panel( 'offert' , array(

@@ -29,9 +29,9 @@ main {
 }
 .container-fluid {
   width: calc(100% - 100px);
-  max-width: 1400px;
+  max-width: calc(1400px - 35px);
   margin: 0 auto;
-  padding-left: 35px;
+  padding-left: 31px;
   // @media #{$xlg} {
   //   max-width: 1100px;
   // }

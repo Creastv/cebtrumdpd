@@ -5,6 +5,8 @@ while ( have_posts() ) : the_post();
         get_template_part( 'template-parts/content/content-team' );
     } elseif (is_post_type('oferta')){
         get_template_part( 'template-parts/content/content-offert' );
+    } elseif (is_post_type('referencje')){
+        get_template_part( 'template-parts/content/content-referencje' );
     } else { ?>
         <article>
             <header class="entry-header">
